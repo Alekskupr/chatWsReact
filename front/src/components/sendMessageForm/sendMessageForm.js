@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { messageInStateAC } from '../../redux/actions';
-
+import './sendMessageForm.css';
 class SendMessageForm extends Component {
   constructor(props) {
     super(props);
@@ -22,9 +22,9 @@ class SendMessageForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.sendMessageInStore}>
+      <form class = "form" onSubmit={this.sendMessageInStore}>
         <input value = {this.state.message} type="text" onChange={this.messageForState} placeholder="напиши сообщение" />
-        <button type="submit">отправить</button>
+        <button type="submit">></button>
       </form>
     );
   }

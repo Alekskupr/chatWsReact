@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  border: 2px solid green;
 }
 
 .App-logo {
@@ -35,4 +36,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #3c4a55;
+  border: 1px solid black;
+  border-radius:6px;
+  box-shadow:   0 3px 30px rgba(0, 0, 0, 0.1);
+  width: 30vw;
+  height: 70vh;
+  min-height: 500px;
+  min-width: 300px;
+  margin: 30px auto;
+  position: relative;
 }

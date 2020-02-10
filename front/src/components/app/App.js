@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Title from '../title';
 import MessageList from '../messageList';
 import SendMessageForm from '../sendMessageForm';
-import './App.css';
 import { messageFromServerInStateAC, messagesInStateAC } from '../../redux/actions';
+import './App.css';
 
 const websocket = new WebSocket('ws://localhost:8080/');
 
@@ -34,12 +34,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="outerContainer">
-        <div className="container">
-          <Title />
-          <MessageList messages={this.props.messages} />
-          <SendMessageForm />
-        </div>
+      <div className="container">
+        <Title />
+        <MessageList messages={this.props.messages} />
+        <SendMessageForm />
       </div>
     );
   }
