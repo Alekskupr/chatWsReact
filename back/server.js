@@ -12,26 +12,13 @@ const wss = new WebSocket.Server({
   clientTracking: true,
 });
 
-wss.on('connection', (ws, req) => {
-  ws.send(JSON.stringify({ connection: 'ура, новый пользователь' }));
-
-  
+wss.on('connection', (ws) => {
   ws.on('message', (message) => {
-    console.log(message);
-    ws.send(JSON.stringify({ res: message }));
+    wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        const msg = JSON.parse(message);
+        client.send(JSON.stringify({ message: msg }));
+      }
+    });
   });
 });
-
-// const io = socketIo(server);
-// io.on('connection', socket => {
-//   console.log('Client connected!');
-//   socket.on('user: message', msg => {
-//     console.log(msg);
-//     socket.broadcast.emit('user: message', msg);
-//     socket.emit('user: message', msg);
-//   });
-
-//   socket.on('user: disconnect', socket.disconnect);
-
-//   socket.emit('server-to-client', 'hello world');
-// });
