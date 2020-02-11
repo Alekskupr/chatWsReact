@@ -4,7 +4,6 @@ export default class MessageList extends Component {
   
 
   render() {
-    console.log(this.props);
     const message = this.props.messages.map((item, index) => {
       return (
         <div className = "message" key = {index}><p class = "text">{item}</p></div>

@@ -1,4 +1,4 @@
-import { MESSAGE, MESSAGEFROMSERVER, MESSAGES } from './types';
+import { MESSAGE, MESSAGEFROMSERVER, MESSAGES, LOGIN } from './types';
 
 const messageInStateAC = message => {
   return {
@@ -21,4 +21,8 @@ const messagesInStateAC = messages => {
   };
 };
 
-export { messageInStateAC, messageFromServerInStateAC, messagesInStateAC };
+const loginAC = login => {
+  return { type: LOGIN, payload: login };
+};
+
+export { messageInStateAC, messageFromServerInStateAC, messagesInStateAC, loginAC };

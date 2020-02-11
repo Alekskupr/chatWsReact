@@ -1,0 +1,22 @@
+.registration {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formRegistration {
+  background-color: #2d3742;
+  position: relative;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  
+}
+
+.loginInput {
+  width: 100%;
+  font-size: 18px;
+}
+
+.formRegistration .loginInput:focus {
+  border: 1px solid rgb(50, 50, 189);
+}

@@ -28,7 +28,7 @@ class SendMessageForm extends Component {
           value={this.state.message}
           type="text"
           onChange={this.messageForState}
-          placeholder="напиши сообщение"
+          placeholder="Введите текст"
         />
         <button type="submit">></button>
       </form>

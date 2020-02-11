@@ -1,60 +1,20 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Title from '../title';
-import MessageList from '../messageList';
-import SendMessageForm from '../sendMessageForm';
-import { messageFromServerInStateAC, messagesInStateAC } from '../../redux/actions';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { connect } from 'react-redux';
 
-const websocket = new WebSocket('ws://localhost:8080/');
+import Chat from '../chat';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      messages: [],
-      message: '',
-    };
-  }
+import Registration from '../registration/registration';
 
-  componentDidMount() {
-    websocket.onmessage = e => {
-      let res = JSON.parse(e.data);
-      if (res.message) {
-        this.props.messageFromServerInState(res.message);
-      }
-    };
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.message !== this.props.message) {
-      websocket.send(JSON.stringify(this.props.message));
-    }
-  }
-
+export default class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Title />
-        <MessageList messages={this.props.messages} />
-        <SendMessageForm />
+      <div>
+        <Router>
+          <Route exact path="/" component={Registration} />
+          <Route path="/chat" component={Chat} />
+        </Router>
       </div>
     );
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    message: state.message,
-    messages: state.messages,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    messagesInState: messages => dispatch(messagesInStateAC(messages)),
-    messageFromServerInState: messageFromServer => dispatch(messageFromServerInStateAC(messageFromServer)),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);

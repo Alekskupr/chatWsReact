@@ -1,5 +1,4 @@
 .form {
-  background-color: #2d3742;
   position: relative;
   bottom: 0;
   height: 50px;
@@ -9,10 +8,7 @@
 
 .form input {
   flex-grow: 1;
-}
-
-.form input:focus {
-  border: 1px solid blue;
+  font-size: 18px;
 }
 
 button {

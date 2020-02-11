@@ -12,7 +12,7 @@ export default class Title extends Component {
   render() {
     return (
       <div className="title">
-        <p className="name">Приветствую</p>
+        <p className="name">Приветствую {this.props.login}! </p>
       </div>
     );
   }

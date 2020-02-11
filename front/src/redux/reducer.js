@@ -1,7 +1,7 @@
-import { MESSAGE, MESSAGEFROMSERVER, MESSAGES } from './types';
+import { MESSAGE, MESSAGEFROMSERVER, MESSAGES, LOGIN } from './types';
 
 const initialState = {
-  user: '',
+  login: '',
   message: '',
   messages: [],
 };
@@ -27,6 +27,12 @@ export default function(state = initialState, action) {
         ...state,
         messages: action.payload,
       };
+    }
+    case LOGIN: {
+      return {
+        ...state,
+        login: action.payload,
+      }
     }
 
     default:
