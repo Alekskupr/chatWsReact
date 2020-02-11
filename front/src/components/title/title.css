@@ -1,0 +1,13 @@
+.title {
+  height: 10%;
+  text-align: start;
+  border-bottom: 1px solid black;
+}
+
+.name {
+  position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  vertical-align: middle;
+  padding: 0 10px;
+}

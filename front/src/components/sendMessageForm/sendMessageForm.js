@@ -22,8 +22,14 @@ class SendMessageForm extends Component {
 
   render() {
     return (
-      <form class = "form" onSubmit={this.sendMessageInStore}>
-        <input value = {this.state.message} type="text" onChange={this.messageForState} placeholder="напиши сообщение" />
+      <form className="form" onSubmit={this.sendMessageInStore}>
+        <input
+          className="typeMessage"
+          value={this.state.message}
+          type="text"
+          onChange={this.messageForState}
+          placeholder="напиши сообщение"
+        />
         <button type="submit">></button>
       </form>
     );

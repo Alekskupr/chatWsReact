@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './title.css';
 
 export default class Title extends Component {
   constructor(props) {
@@ -9,6 +10,10 @@ export default class Title extends Component {
   }
 
   render() {
-    return <div>Здесь будет заголовок</div>;
+    return (
+      <div className="title">
+        <p className="name">Приветствую</p>
+      </div>
+    );
   }
 }
